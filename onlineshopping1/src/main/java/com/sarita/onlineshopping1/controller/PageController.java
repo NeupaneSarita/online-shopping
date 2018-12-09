@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//import com.sarita.shoppingbackend1.dao.CategoryDAO;
+import com.sarita.shoppingbackend1.dao.CategoryDAO;
 
 @Controller
 public class PageController {
-//	@Autowired 
-//	private CategoryDAO categoryDAO;
+	@Autowired 
+	private CategoryDAO categoryDAO;
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title","Home");
-		mv.addObject("userClickHome", true);
-//		mv.addObject("Categories",categoryDAO.list());
-//		mv.addObject("userClickHome",true);
+	//	mv.addObject("title","Home");
+	//  mv.addObject("userClickHome", true);
+	mv.addObject("Categories",categoryDAO.list());
+		mv.addObject("userClickHome",true);
 		return mv;
 	}
 
