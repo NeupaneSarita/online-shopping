@@ -11,14 +11,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PageController {
-	//@Autowired 
-	//private CategoryDAO categoryDAO;
+//	@Autowired 
+//	private CategoryDAO categoryDAO;
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","Home");
-		//mv.addObject("Categories",categoryDAO.list());
-		mv.addObject("userClickHome",true);
+		mv.addObject("userClickHome", true);
+//		mv.addObject("Categories",categoryDAO.list());
+//		mv.addObject("userClickHome",true);
 		return mv;
 	}
 
@@ -58,6 +59,28 @@ public class PageController {
 //	return mv;
 //
 //	}
+	
+	@RequestMapping(value = { "/about" })
+	public ModelAndView about() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","About");
+		mv.addObject("userClickAbout", true);
+//		mv.addObject("Categories",categoryDAO.list());
+//		mv.addObject("userClickHome",true);
+		return mv;
+	}
+	
+	@RequestMapping(value = { "/contact" })
+	public ModelAndView contact() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","Contact");
+		mv.addObject("userClickContact", true);
+//		mv.addObject("Categories",categoryDAO.list());
+//		mv.addObject("userClickHome",true);
+		return mv;
+	}
+
+
 	
 }
 
